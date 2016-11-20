@@ -5,9 +5,11 @@
   'use strict';
 
   angular
-    .module('myApp', [
-      'myApp.config',
-      'myApp.components.main'
+    .module('tenPuzzleApp', [
+      'ngRoute',
+      'tenPuzzleApp.config',
+      'tenPuzzleApp.components.main',
+      'tenPuzzleApp.components.info'
     ]);
 
 })();
