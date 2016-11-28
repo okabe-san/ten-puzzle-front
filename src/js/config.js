@@ -13,6 +13,11 @@
       controller: 'mainController',
       controllerAs: 'mainCtrl'
     })
+    .when('/cal', {
+      templateUrl: 'js/components/cal/cal.view.html',
+      controller: 'calController',
+      controllerAs: 'calCtrl'
+    })
     .when('/info', {
       templateUrl: 'js/components/info/info.view.html',
       controller: 'infoController',

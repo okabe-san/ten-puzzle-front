@@ -13,6 +13,7 @@
       <div ng-controller="mainController as mainCtrl">
         <p>{{ mainCtrl.greeting }}</p>
       </div>
+      <ng-view></ng-view>
     </div>
     <!-- scripts -->
     <script type="text/javascript" src="//code.jquery.com/jquery-2.2.4.min.js"></script>
@@ -23,6 +24,8 @@
     <script type="text/javascript" src="js/config.js"></script>
     <!-- main component -->
     <script type="text/javascript" src="js/components/main/main.controller.js"></script>
+    <script type="text/javascript" src="js/components/cal/cal.controller.js"></script>
+    <script type="text/javascript" src="js/components/cal/cal.service.js"></script>
     <script type="text/javascript" src="js/components/info/info.controller.js"></script>
   </body>
 </html>

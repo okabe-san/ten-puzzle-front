@@ -1,0 +1,23 @@
+<div ng-controller="randomController as randomCtrl">
+  <button ng-click=randomCtrl.get()>Start</button>
+
+  <p>{{calCtrl.cal}}</p>
+
+  <div>
+    <button ng-repeat="num in randomCtrl.random track by $index" ng-click=calCtrl.add(num)>
+      {{num}}
+    </button>
+  </div>
+
+  <button ng-click=calCtrl.add('(')>(</button>
+  <button ng-click=calCtrl.add(')')>)</button>
+  <button ng-click=calCtrl.add('+')>+</button>
+  <button ng-click=calCtrl.add('-')>-</button>
+  <button ng-click=calCtrl.add('*')>*</button>
+  <button ng-click=calCtrl.add('/')>/</button>
+  <button ng-click=calCtrl.clear()>Delete</button>
+  <button ng-click=calCtrl.submit()>Submit</button>
+
+  <p>{{calCtrl.result}}</p>
+
+</div>

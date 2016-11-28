@@ -10,7 +10,7 @@
 
   function mainController($scope) {
     /*jshint validthis: true */
-    this.greeting = 'Hello World!';
+    this.greeting = '電車の旅にようこそ!';
   }
 
 })();

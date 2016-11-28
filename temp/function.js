@@ -26,9 +26,9 @@ function base(num, operators) {
   }
 }
 
-// a, b, (c, d) >>> only one divider
+// (a, b),c, d >>> only one divider front
 // input "d" >>> divider
-function typeOne(num, operators) {
+function typeOneA(num, operators) {
   let result = 0;
   let index = num.indexOf('d');
 
@@ -39,10 +39,34 @@ function typeOne(num, operators) {
 
   // new operator arrays
   let numOneOperators = operators.slice(0, index-1);
-  let numTwoOperators = operators.slice(index);
-  let numThreeOperators = operators.slice(index-1, 1);
+  let numThreeOperators = operators.slice(index-1);
 
-  numThree.push(base(numOne, numOneOperators), base(numTwo, numTwoOperators));
+  let temp = [];
+  temp.push(base(numOne, numOneOperators));
+  numThree = temp.concat(numTwo);
+
+  result = base(numThree, numThreeOperators);
+  return result;
+}
+
+// a, b, (c, d) >>> only one divider end
+// input "d" >>> divider
+function typeOneB(num, operators) {
+  let result = 0;
+  let index = num.indexOf('d');
+
+  // new number arrays
+  let numOne = num.slice(0, index);
+  let numTwo = num.slice(index+1);
+  let numThree = [];
+
+  // new operator arrays
+  let numTwoOperators = operators.slice(index);
+  let numThreeOperators = operators.slice(0, index);
+
+  let temp = [];
+  temp.push(base(numTwo, numTwoOperators));
+  numThree = numOne.concat(temp);
 
   result = base(numThree, numThreeOperators);
   return result;
@@ -84,5 +108,6 @@ function typeTwo(num, operators) {
 }
 
 // console.log(base([1,2,3,4], ['*', '*', '*']));
-// console.log(typeOne([1,'d',2,3,4], ['*', '-', '*']));
-console.log(typeTwo([1,'d',8,4,'d',4], ['*', '-', '*']));
+console.log(typeOneB([1,2,'d',2,1], ['+', '*', '+']));
+console.log(typeOneB([1,'d',2,1,2], ['+', '+', '*']));
+// console.log(typeTwo([1,'d',8, 4,'d',4], ['*', '-', '*']));

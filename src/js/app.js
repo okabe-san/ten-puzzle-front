@@ -9,6 +9,7 @@
       'ngRoute',
       'tenPuzzleApp.config',
       'tenPuzzleApp.components.main',
+      'tenPuzzleApp.components.cal',
       'tenPuzzleApp.components.info'
     ]);
 
