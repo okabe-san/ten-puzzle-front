@@ -14,11 +14,15 @@
 
   function timerController($scope, $timeout) {
     $scope.counter = 0;
-    let updateCounter = () => {
+    $scope.updateCounter = () => {
       $scope.counter++;
-      $timeout(updateCounter, 1000);
+      let stop = $timeout($scope.updateCounter, 1000);
+      $scope.restartCounter = () => {
+        $timeout.cancel(stop);
+        $scope.counter = 0;
+        $scope.updateCounter();
+      };
     };
-    updateCounter();
   }
 
   function randomController(randomService) {
