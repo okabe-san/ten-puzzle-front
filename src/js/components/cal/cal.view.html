@@ -1,5 +1,5 @@
 <div ng-controller="randomController as randomCtrl">
-  <button ng-click=randomCtrl.get()>Start</button>
+  <button ng-click="randomCtrl.get(); show=true; showButton=true" ng-show="!showButton">Start</button>
 
   <p>{{calCtrl.cal}}</p>
 
@@ -9,14 +9,24 @@
     </button>
   </div>
 
-  <button ng-click=calCtrl.add('(')>(</button>
-  <button ng-click=calCtrl.add(')')>)</button>
-  <button ng-click=calCtrl.add('+')>+</button>
-  <button ng-click=calCtrl.add('-')>-</button>
-  <button ng-click=calCtrl.add('*')>*</button>
-  <button ng-click=calCtrl.add('/')>/</button>
-  <button ng-click=calCtrl.clear()>Delete</button>
-  <button ng-click=calCtrl.submit()>Submit</button>
+  <div ng-if="show">
+    <button ng-click="calCtrl.add('(')">(</button>
+    <button ng-click="calCtrl.add(')')">)</button>
+    <button ng-click="calCtrl.add('+')">+</button>
+    <button ng-click="calCtrl.add('-')">-</button>
+    <button ng-click="calCtrl.add('*')">*</button>
+    <button ng-click="calCtrl.add('/')">/</button>
+    <br>
+    <button ng-click="calCtrl.clear()">Delete</button>
+    <button ng-click="calCtrl.submit()">Submit</button>
+
+    <div ng-controller="timerController as timerCtrl">
+      <p>{{counter}}</p>
+    </div>
+    
+  </div>
+
+  <button ng-click="randomCtrl.get()" ng-if="show">Next</button>
 
   <p>{{calCtrl.result}}</p>
 

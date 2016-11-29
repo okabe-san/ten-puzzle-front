@@ -4,11 +4,22 @@
 
   angular
     .module('tenPuzzleApp.components.cal', [])
+    .controller('timerController', timerController)
     .controller('randomController', randomController)
     .controller('calController', calController);
 
+  timerController.$inject = ['$scope', '$timeout'];
   randomController.$inject = ['randomService'];
   calController.$inject = ['calService'];
+
+  function timerController($scope, $timeout) {
+    $scope.counter = 0;
+    let updateCounter = () => {
+      $scope.counter++;
+      $timeout(updateCounter, 1000);
+    };
+    updateCounter();
+  }
 
   function randomController(randomService) {
     /*jshint validthis: true */
@@ -36,13 +47,13 @@
     };
 
     this.clear = () => {
-      let lastIndex = this.cal.substring(this.cal.length -1);
+      let lastIndex = this.cal.substring(this.cal.length - 1);
       if (lastIndex === '+' || lastIndex === '-' || lastIndex === '*' || lastIndex === '/') {
         this.operatorArr.pop();
       } else {
         this.numArr.pop();
       }
-      this.cal = this.cal.substring(0, this.cal.length -1);
+      this.cal = this.cal.substring(0, this.cal.length - 1);
     };
 
     this.submit = () => {
@@ -52,9 +63,9 @@
       } else if (this.numArr[0] === 'd') {
         this.numArr.shift();
         this.result = calService.typeOneA(this.numArr, this.operatorArr);
-      } else if (this.numArr[this.numArr.length-1] === 'd') {
+      } else if (this.numArr[this.numArr.length - 1] === 'd') {
         this.numArr.pop();
-          this.result = calService.typeOneB(this.numArr, this.operatorArr);
+        this.result = calService.typeOneB(this.numArr, this.operatorArr);
       } else {
         this.result = calService.typeTwo(this.numArr, this.operatorArr);
       }

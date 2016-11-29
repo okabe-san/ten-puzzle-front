@@ -16,7 +16,7 @@
     let arr = [];
     let i = 0;
     while (i < 4) {
-      arr.push(Math.floor(Math.random()*(9)+1));
+      arr.push(Math.floor(Math.random() * (9) + 1));
       i++;
     }
     return arr;
@@ -42,18 +42,18 @@
       let result = num[0];
       let i = 0;
       while (i < operators.length) {
-        switch(operators[i]) {
+        switch (operators[i]) {
           case '+':
-            result += parseInt(num[i+1]);
+            result += parseInt(num[i + 1]);
             break;
           case '-':
-            result -= parseInt(num[i+1]);
+            result -= parseInt(num[i + 1]);
             break;
           case '*':
-            result *= parseInt(num[i+1]);
+            result *= parseInt(num[i + 1]);
             break;
           case '/':
-            result /= parseInt(num[i+1]);
+            result /= parseInt(num[i + 1]);
             break;
         }
         i++;
@@ -70,12 +70,12 @@
 
     // new number arrays
     let numOne = num.slice(0, index);
-    let numTwo = num.slice(index+1);
+    let numTwo = num.slice(index + 1);
     let numThree = [];
 
     // new operator arrays
-    let numOneOperators = operators.slice(0, index-1);
-    let numThreeOperators = operators.slice(index-1);
+    let numOneOperators = operators.slice(0, index - 1);
+    let numThreeOperators = operators.slice(index - 1);
 
     let temp = [];
     temp.push(base(numOne, numOneOperators));
@@ -93,7 +93,7 @@
 
     // new number arrays
     let numOne = num.slice(0, index);
-    let numTwo = num.slice(index+1);
+    let numTwo = num.slice(index + 1);
     let numThree = [];
 
     // new operator arrays
@@ -117,22 +117,22 @@
 
     // new number arrays
     let numOne = num.slice(0, index);
-    let numTwo = num.slice(index+1, indexSecond);
+    let numTwo = num.slice(index + 1, indexSecond);
     let numThree = [];
-    let numFour = num.slice(indexSecond+1);
+    let numFour = num.slice(indexSecond + 1);
     let numFive = [];
 
     // new operator arrays
-    let numOneOperators = operators.slice(0, index-1);
-    let numTwoOperators = operators.slice(index, indexSecond-2);
-    let numThreeOperators = operators.slice(index-1, 1);
+    let numOneOperators = operators.slice(0, index - 1);
+    let numTwoOperators = operators.slice(index, indexSecond - 2);
+    let numThreeOperators = operators.slice(index - 1, 1);
     let numFourOperator = operators.slice(indexSecond);
     let numFiveOperator = [];
 
-    if (indexSecond-1 === operators.length) {
-      numFiveOperator = operators.slice(indexSecond-2);
+    if (indexSecond - 1 === operators.length) {
+      numFiveOperator = operators.slice(indexSecond - 2);
     } else {
-      numFiveOperator = operators.slice(indexSecond-2, 1);
+      numFiveOperator = operators.slice(indexSecond - 2, 1);
     }
 
     numThree.push(base(numOne, numOneOperators), base(numTwo, numTwoOperators));
