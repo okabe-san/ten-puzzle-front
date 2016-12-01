@@ -4,13 +4,21 @@
 
   angular
     .module('tenPuzzleApp.components.info', [])
+    .controller('initController', initController)
     .controller('infoController', infoController);
 
-  infoController.$inject = ['$scope'];
+  initController.$inject = ['$scope', 'storageService'];
 
-  function infoController($scope) {
+  function initController($scope, storageService) {
     /*jshint validthis: true */
-    this.greeting = 'Hello World!';
+    $scope.get = () => {
+      this.numData = storageService.getStorage();
+    };
+  }
+
+  function infoController() {
+    /*jshint validthis: true */
+    this.greeting = '記録帳';
   }
 
 })();

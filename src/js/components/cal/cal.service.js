@@ -13,14 +13,19 @@
 
   function storageService() {
     /*jshint validthis: true */
+    this.numData = [];
+
     this.store = (data) => {
       if (localStorage.getItem('TenPuzzle')) {
         let newData = JSON.parse(localStorage.getItem('TenPuzzle'));
         newData.push(data);
         localStorage.setItem('TenPuzzle', JSON.stringify(newData));
+        this.numData = newData;
       } else {
         localStorage.setItem('TenPuzzle', JSON.stringify([data]));
+        this.numData = [data];
       }
+      return this.numData;
     };
   }
 
