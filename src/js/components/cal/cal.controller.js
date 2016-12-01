@@ -4,40 +4,40 @@
 
   angular
     .module('tenPuzzleApp.components.cal', [])
-    .controller('timerController', timerController)
-    .controller('randomController', randomController)
+    .controller('initController', initController)
     .controller('calController', calController);
 
-  timerController.$inject = ['$scope', '$timeout'];
-  randomController.$inject = ['randomService'];
-  calController.$inject = ['calService'];
+  initController.$inject = ['$scope', 'randomService', 'timerService'];
+  calController.$inject = ['$scope', '$window', 'calService', 'timerService'];
 
-  function timerController($scope, $timeout) {
-    $scope.counter = 0;
-    $scope.updateCounter = () => {
-      $scope.counter++;
-      let stop = $timeout($scope.updateCounter, 1000);
-      $scope.restartCounter = () => {
-        $timeout.cancel(stop);
-        $scope.counter = 0;
-        $scope.updateCounter();
-      };
-    };
-  }
-
-  function randomController(randomService) {
+  function initController($scope, randomService, timerService) {
     /*jshint validthis: true */
-    this.random = randomService.random;
-    this.get = () => {
+    $scope.get = () => {
       this.random = randomService.random();
     };
+    this.counter = () => timerService.counter;
+    $scope.timer = () => {
+      timerService.updateCounter();
+    };
   }
 
-  function calController(calService) {
+  function calController($scope, $window, calService, timerService) {
     /*jshint validthis: true */
     this.numArr = calService.numArr;
     this.operatorArr = calService.operatorArr;
     this.cal = calService.cal;
+    this.result = calService.result;
+
+    $scope.reloadRoute = () => {
+      $window.location.reload();
+    };
+
+    this.cleanUp = () => {
+      this.numArr = [];
+      this.operatorArr = [];
+      this.cal = '';
+      this.result = 0;
+    };
 
     this.add = (item) => {
       if (item === '+' || item === '-' || item === '*' || item === '/') {
@@ -61,12 +61,23 @@
     };
 
     this.submit = () => {
-      this.result = calService.result;
       if (this.numArr.length === 4) {
         this.result = calService.base(this.numArr, this.operatorArr);
+        if (!calService.check(this.result)) {
+          this.message = 'Wrong...';
+        } else {
+          this.message = 'Correct!';
+          timerService.stopCounter();
+        }
       } else if (this.numArr[0] === 'd') {
         this.numArr.shift();
         this.result = calService.typeOneA(this.numArr, this.operatorArr);
+        if (!calService.check(this.result)) {
+          this.message = 'Wrong...';
+        } else {
+          this.message = 'Correct!';
+          timerService.stopCounter();
+        }
       } else if (this.numArr[this.numArr.length - 1] === 'd') {
         this.numArr.pop();
         this.result = calService.typeOneB(this.numArr, this.operatorArr);

@@ -3,23 +3,45 @@
   'use strict';
 
   angular
-  .module('tenPuzzleApp.components.cal')
-  .service('randomService', randomService)
-  .service('calService', calService);
+    .module('tenPuzzleApp.components.cal')
+    .service('timerService', timerService)
+    .service('randomService', randomService)
+    .service('calService', calService);
+
+  timerService.$inject = ['$timeout'];
+
+  function timerService($timeout) {
+    /*jshint validthis: true */
+    this.counter = 0;
+    this.updateCounter = () => {
+      this.counter++;
+      let stop = $timeout(this.updateCounter, 1000);
+      this.restartCounter = () => {
+        $timeout.cancel(stop);
+        this.counter = 0;
+        this.updateCounter();
+      };
+      this.stopCounter = () => {
+        $timeout.cancel(stop);
+      };
+      console.log(this.counter);
+      return this.counter;
+    };
+  }
 
   function randomService() {
     /*jshint validthis: true */
-    this.random = random;
-  }
-
-  function random() {
-    let arr = [];
-    let i = 0;
-    while (i < 4) {
-      arr.push(Math.floor(Math.random() * (9) + 1));
-      i++;
-    }
-    return arr;
+    this.currentNum = [];
+    this.random = () => {
+      let arr = [];
+      let i = 0;
+      while (i < 4) {
+        arr.push(Math.floor(Math.random() * (9) + 1));
+        i++;
+      }
+      this.currentNum = arr;
+      return this.currentNum;
+    };
   }
 
   function calService() {
@@ -32,6 +54,8 @@
     this.typeOneA = typeOneA;
     this.typeOneB = typeOneB;
     this.typeTwo = typeTwo;
+    this.check = check;
+    this.message = '';
   }
 
   // a, b, c, d
@@ -141,6 +165,14 @@
 
     result = base(numFive, numFiveOperator);
     return result;
+  }
+
+  function check(num) {
+    if (num === 10) {
+      return true;
+    } else {
+      return false;
+    }
   }
 
 })();
