@@ -8,7 +8,7 @@
     .controller('calController', calController);
 
   initController.$inject = ['$scope', 'randomService', 'timerService'];
-  calController.$inject = ['$scope', '$window', 'calService', 'timerService'];
+  calController.$inject = ['$scope', '$window', 'calService', 'timerService', 'storageService'];
 
   function initController($scope, randomService, timerService) {
     /*jshint validthis: true */
@@ -21,12 +21,16 @@
     };
   }
 
-  function calController($scope, $window, calService, timerService) {
+  function calController($scope, $window, calService, timerService, storageService) {
     /*jshint validthis: true */
     this.numArr = calService.numArr;
     this.operatorArr = calService.operatorArr;
     this.cal = calService.cal;
     this.result = calService.result;
+
+    this.saveData = () => {
+      storageService.store(timerService.counter);
+    };
 
     $scope.reloadRoute = () => {
       $window.location.reload();

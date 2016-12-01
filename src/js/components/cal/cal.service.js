@@ -4,11 +4,25 @@
 
   angular
     .module('tenPuzzleApp.components.cal')
+    .service('storageService', storageService)
     .service('timerService', timerService)
     .service('randomService', randomService)
     .service('calService', calService);
 
   timerService.$inject = ['$timeout'];
+
+  function storageService() {
+    /*jshint validthis: true */
+    this.store = (data) => {
+      if (localStorage.getItem('TenPuzzle')) {
+        let newData = JSON.parse(localStorage.getItem('TenPuzzle'));
+        newData.push(data);
+        localStorage.setItem('TenPuzzle', JSON.stringify(newData));
+      } else {
+        localStorage.setItem('TenPuzzle', JSON.stringify([data]));
+      }
+    };
+  }
 
   function timerService($timeout) {
     /*jshint validthis: true */
@@ -24,7 +38,6 @@
       this.stopCounter = () => {
         $timeout.cancel(stop);
       };
-      console.log(this.counter);
       return this.counter;
     };
   }

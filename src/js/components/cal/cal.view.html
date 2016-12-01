@@ -15,7 +15,6 @@
   <button ng-click="calCtrl.add('*')">*</button>
   <button ng-click="calCtrl.add('/')">/</button>
   <br>
-  <button ng-click="calCtrl.clear()">Delete</button>
   <button ng-click="calCtrl.submit()">Submit</button>
   <p>{{initCtrl.counter()}}</p>
   <button ng-click="reloadRoute()">Next</button>
@@ -26,4 +25,4 @@
 
 </div>
 
-<a href="#/info"><button type="button">Info</button></a>
+<button ng-click="calCtrl.saveData()">Test</button>
