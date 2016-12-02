@@ -1,7 +1,26 @@
-<div ng-controller="initController as initCtrl" data-ng-init="get()">
+<div ng-controller="initDataController as initDataCtrl" data-ng-init="getData()">
 
 {{infoCtrl.greeting}}
+  <div class="scoreWrapper">
+    <div class="score" ng-repeat="num in initDataCtrl.repeatData">
+      Score: {{num.data}}
+      Number: {{num.value}}
+      <span ng-if="num.data <= 20">
+        <img ng-src="css/images/temp3.jpeg">
+      </span>
+      <span ng-if="num.data > 20 && num.data <= 30">
+        <img ng-src="css/images/temp2.jpeg">
+      </span>
+      <span ng-if="num.data > 30">
+        <img ng-src="css/images/temp1.jpeg">
+      </span>
+    </div>
+  </div>
 
-{{initCtrl.numData}}
+  <section class="btn-small">
+    <button ng-click="infoCtrl.deleteData()">Delete</button>
+    <br>
+    <a href="#/cal"><button type="button">Game</button></a>
+  </section>
 
 </div>

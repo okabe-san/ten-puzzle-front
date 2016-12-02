@@ -1,1 +1,39 @@
-/* add custom styles */
+p {
+  font-size: 100px;
+}
+
+.wrapper {
+  display: flex;
+  justify-content: center;
+}
+
+.main-content {
+  text-align: center;
+  padding-top: 500px;
+}
+
+.btn {
+  font-size: 100px;
+}
+
+/*cal page*/
+
+/*info page*/
+img {
+  width: 100px;
+  height: 100px;
+}
+
+.scoreWrapper {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.score {
+  flex-basis: 33%;
+  border: 1px solid #555;
+}
+
+.btn-small {
+  font-size: 50px;
+}

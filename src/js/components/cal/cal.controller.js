@@ -27,14 +27,19 @@
     this.operatorArr = calService.operatorArr;
     this.cal = calService.cal;
     this.result = calService.result;
+    this.counter = timerService.counter;
 
     $scope.reloadRoute = () => {
       $window.location.reload();
     };
 
+    this.stop = () => {
+      timerService.stopCounter();
+    };
+
     this.cleanUp = () => {
-      this.numArr = [];
-      this.operatorArr = [];
+      this.numArr = calService.numArr.splice(0,0);
+      this.operatorArr = calService.numArr.splice(0,0);
       this.cal = '';
       this.result = 0;
     };
@@ -53,13 +58,6 @@
     this.submit = () => {
       if (this.numArr.length === 4) {
         this.result = calService.base(this.numArr, this.operatorArr);
-        if (!calService.check(this.result)) {
-          this.message = 'Wrong...';
-        } else {
-          this.message = 'Correct!';
-          timerService.stopCounter();
-          storageService.store(timerService.counter);
-        }
       } else if (this.numArr[0] === 'd') {
         this.numArr.shift();
         this.result = calService.typeOneA(this.numArr, this.operatorArr);
@@ -68,6 +66,14 @@
         this.result = calService.typeOneB(this.numArr, this.operatorArr);
       } else {
         this.result = calService.typeTwo(this.numArr, this.operatorArr);
+      }
+      if (!calService.check(this.result)) {
+        this.message = 'Wrong... Try again.';
+      } else {
+        this.message = 'Correct!';
+        timerService.stopCounter();
+        storageService.store(timerService.counter);
+        storageService.storeNum(this.numArr);
       }
     };
 

@@ -4,21 +4,34 @@
 
   angular
     .module('tenPuzzleApp.components.info', [])
-    .controller('initController', initController)
+    .controller('initDataController', initDataController)
     .controller('infoController', infoController);
 
-  initController.$inject = ['$scope', 'storageService'];
+  initDataController.$inject = ['$scope', 'storageDataService'];
 
-  function initController($scope, storageService) {
+  infoController.$inject = ['$window', 'storageDataService'];
+
+  function initDataController($scope, storageDataService) {
     /*jshint validthis: true */
-    $scope.get = () => {
-      this.numData = storageService.getStorage();
+    $scope.getData = () => {
+      let scoreArr = storageDataService.getStorage();
+      let numArr = storageDataService.getStorageNum();
+      this.repeatData = scoreArr.map(function(value, index) {
+        return {
+          data: value,
+          value: numArr[index]
+        };
+      });
     };
   }
 
-  function infoController() {
+  function infoController($window, storageDataService) {
     /*jshint validthis: true */
     this.greeting = '記録帳';
+    this.deleteData = () => {
+      storageDataService.deleteStorage();
+      $window.location.reload();
+    };
   }
 
 })();
