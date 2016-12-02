@@ -1,8 +1,13 @@
+/*body {
+  background-image: url("images/ticket01.jpeg");
+  background-size: cover;
+}*/
+
 p {
   font-size: 100px;
 }
 
-.wrapper {
+.wrapper-center {
   display: flex;
   justify-content: center;
 }
@@ -12,11 +17,48 @@ p {
   padding-top: 500px;
 }
 
-.btn {
-  font-size: 100px;
+.top {
+  padding-top: 5%;
+}
+
+.bottom {
+  position: absolute;
+  bottom: 0;
+  padding-bottom: 5%;
 }
 
 /*cal page*/
+.btn, .submit, .oeprator, .digit {
+  color: green;
+  outline: none;
+  border-style: none;
+}
+
+.btn {
+  font-size: 70px;
+  background-color: transparent;
+}
+
+.submit {
+  font-size: 100px;
+  padding: 0 30px;
+  border: 9px solid #ccc;
+  border-radius: 3em .7em 2em .7em/.7em 2em .7em 3em;
+  background-color: transparent;
+}
+
+.oeprator {
+  font-size: 150px;
+  padding: 35px;
+  background-color: transparent;
+}
+
+.digit {
+  font-size: 100px;
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+}
 
 /*info page*/
 img {

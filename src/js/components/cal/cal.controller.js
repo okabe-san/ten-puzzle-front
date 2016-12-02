@@ -43,6 +43,7 @@
       this.operatorArr = calService.numArr.splice(0,0);
       this.cal = '';
       this.result = 0;
+      this.message = '';
     };
 
     this.add = (item) => {
