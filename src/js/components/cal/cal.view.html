@@ -1,6 +1,6 @@
 <div class="" ng-controller="initController as initCtrl" data-ng-init="get(); timer()">
 
-  <a href="#/info"><button class="btn" type="button" ng-click="calCtrl.stop()">Info</button></a>
+  <a href="#/info"><button class="btn" type="button" ng-click="calCtrl.stop()">Record Book</button></a>
 
   <p>{{initCtrl.counter()}}</p>
   <p>{{calCtrl.result}}</p>
@@ -8,7 +8,7 @@
 
   <section class="wrapper">
     <p>{{calCtrl.cal}}</p>
-    <button class="btn" ng-click="reloadRoute()">Next</button>
+    <button class="btn" ng-click="get(); calCtrl.restart()">Next</button>
     <button class="btn" ng-click="calCtrl.cleanUp()">Try Again</button>
   </section>
 
