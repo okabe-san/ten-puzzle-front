@@ -16,12 +16,14 @@
     $scope.getData = () => {
       let scoreArr = storageDataService.getStorage();
       let numArr = storageDataService.getStorageNum();
-      this.repeatData = scoreArr.map(function(value, index) {
-        return {
-          data: value,
-          value: numArr[index]
-        };
-      });
+      if (scoreArr !== null) {
+        this.repeatData = scoreArr.map(function(value, index) {
+          return {
+            data: value,
+            value: numArr[index]
+          };
+        });
+      }
     };
   }
 
