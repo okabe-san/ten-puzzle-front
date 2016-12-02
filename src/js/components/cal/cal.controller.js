@@ -8,7 +8,7 @@
     .controller('calController', calController);
 
   initController.$inject = ['$scope', 'randomService', 'timerService'];
-  calController.$inject = ['$scope', 'calService', 'timerService', 'storageService'];
+  calController.$inject = ['calService', 'timerService', 'storageService'];
 
   function initController($scope, randomService, timerService) {
     /*jshint validthis: true */
@@ -21,7 +21,7 @@
     };
   }
 
-  function calController($scope, calService, timerService, storageService) {
+  function calController(calService, timerService, storageService) {
     /*jshint validthis: true */
     this.numArr = calService.numArr;
     this.operatorArr = calService.operatorArr;
@@ -31,6 +31,7 @@
 
     this.stop = () => {
       timerService.stopCounter();
+      timerService.resetCounter();
     };
 
     this.restart = () => {

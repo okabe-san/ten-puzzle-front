@@ -38,6 +38,9 @@
   function timerService($timeout) {
     /*jshint validthis: true */
     this.counter = 0;
+    this.resetCounter = () => {
+      this.counter = 0;
+    };
     this.updateCounter = () => {
       this.counter++;
       let stop = $timeout(this.updateCounter, 1000);
