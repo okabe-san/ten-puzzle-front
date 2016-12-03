@@ -3,12 +3,46 @@
   background-size: cover;
 }*/
 
-p {
-  font-size: 100px;
+/*angular */
+.ng-binding {
+  display: inline-block;
+  margin: 0;
 }
 
+/*fontawsome*/
+.fa {
+  color: #555;
+  margin: 0 10px;
+}
+
+/*base */
+h4 {
+  color: #555;
+  font-size: 50px;
+  font-family: 'Bevan', cursive;
+}
+
+h5 {
+  color: #555;
+  font-size: 50px;
+  display: inline-block;
+  float: right;
+  font-family: 'Fenix', serif;
+}
+
+h6 {
+  font-size: 30px;
+}
+
+p {
+  font-size: 100px;
+  font-family: 'Bevan', cursive;
+}
+
+/*div wrappers*/
 .wrapper-center {
   display: flex;
+  align-items: center;
   justify-content: center;
 }
 
@@ -18,39 +52,48 @@ p {
 }
 
 .top {
-  padding-top: 5%;
+  padding: 5%;
+}
+
+.answer {
+  height: 350px;
+  margin: 100px;
+  padding: 30px;
+  border-radius: 50px;
+  background-color: rgba(0, 0, 0, 0.1);
 }
 
 .bottom {
   position: absolute;
-  bottom: 0;
+  bottom: 15%;
   padding-bottom: 5%;
 }
 
+.bottom-submit {
+  position: absolute;
+  bottom: 5%;
+  left: 10%;
+}
+
 /*cal page*/
-.btn, .submit, .oeprator, .digit {
+.btn, .submit, .oeprator, .digit, .try {
   color: green;
   outline: none;
   border-style: none;
 }
 
 .btn {
-  font-size: 70px;
-  background-color: transparent;
-}
-
-.submit {
-  font-size: 100px;
-  padding: 0 30px;
-  border: 9px solid #ccc;
-  border-radius: 3em .7em 2em .7em/.7em 2em .7em 3em;
-  background-color: transparent;
+  font-size: 50px;
+  margin: 0 20px;
+  padding: 20px;
+  border-radius: 20px;
 }
 
 .oeprator {
   font-size: 150px;
-  padding: 35px;
+  padding: 30px;
   background-color: transparent;
+  font-family: 'Bevan', cursive;
 }
 
 .digit {
@@ -58,6 +101,27 @@ p {
   width: 200px;
   height: 200px;
   border-radius: 50%;
+  font-family: 'Bevan', cursive;
+}
+
+.submit {
+  font-size: 50px;
+  margin: 10px;
+  padding: 30px;
+  border: 9px solid #ccc;
+  border-radius: 3em .7em 2em .7em/.7em 2em .7em 3em;
+  background-color: transparent;
+  font-family: 'Fenix', serif;
+}
+
+.try {
+  font-size: 50px;
+  margin: 10px;
+  padding: 30px;
+  border: 9px solid #ccc;
+  border-radius: .7em 2em .5em .5em/3em .5em 2em .7em;
+  background-color: transparent;
+  font-family: 'Fenix', serif;
 }
 
 /*info page*/
@@ -69,11 +133,15 @@ img {
 .scoreWrapper {
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
 }
 
 .score {
-  flex-basis: 33%;
+  flex-basis: 17%;
   border: 1px solid #555;
+  height: 150px;
+  margin: 15px;
+  border-radius: 5px;
 }
 
 .btn-small {

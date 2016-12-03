@@ -1,6 +1,12 @@
 <div ng-controller="initDataController as initDataCtrl" data-ng-init="getData()">
 
-{{infoCtrl.greeting}}
+  <section class="">
+    <button class="btn" ng-click="infoCtrl.deleteData()">Delete</button>
+    <br>
+    <a href="#/cal"><button class="btn" type="button">Game</button></a>
+  </section>
+
+  {{infoCtrl.greeting}}
   <div class="scoreWrapper">
     <div class="score" ng-repeat="num in initDataCtrl.repeatData">
       Score: {{num.data}}
@@ -16,11 +22,5 @@
       </span>
     </div>
   </div>
-
-  <section class="">
-    <button class="btn" ng-click="infoCtrl.deleteData()">Delete</button>
-    <br>
-    <a href="#/cal"><button class="btn" type="button">Game</button></a>
-  </section>
 
 </div>

@@ -70,9 +70,9 @@
         this.result = calService.typeTwo(this.numArr, this.operatorArr);
       }
       if (!calService.check(this.result)) {
-        this.message = 'Wrong... Try again.';
+        this.message = 'is not 10...';
       } else {
-        this.message = 'Correct!';
+        this.message = 'Correct! Saved to Record Book.';
         timerService.stopCounter();
         storageService.store(timerService.counter);
         storageService.storeNum(this.numArr);
