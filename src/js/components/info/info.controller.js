@@ -29,7 +29,6 @@
 
   function infoController($window, storageDataService) {
     /*jshint validthis: true */
-    this.greeting = '勝手なスタンプラリー';
     this.deleteData = () => {
       storageDataService.deleteStorage();
       $window.location.reload();

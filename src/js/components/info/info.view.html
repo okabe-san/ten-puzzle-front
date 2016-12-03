@@ -1,16 +1,15 @@
 <div ng-controller="initDataController as initDataCtrl" data-ng-init="getData()">
 
-  <section class="">
-    <button class="btn" ng-click="infoCtrl.deleteData()">Delete</button>
+  <section class="top">
+    <i class="fa fa-trash fa-4x" aria-hidden="true"></i><button class="btn" ng-click="infoCtrl.deleteData()">Delete Record</button>
     <br>
-    <a href="#/cal"><button class="btn" type="button">Game</button></a>
+    <i class="fa fa-backward fa-4x" aria-hidden="true"></i>
+    <a href="#/cal"><button class="btn" type="button">Back</button></a>
   </section>
 
-  {{infoCtrl.greeting}}
   <div class="scoreWrapper">
     <div class="score" ng-repeat="num in initDataCtrl.repeatData">
-      Score: {{num.data}}
-      Number: {{num.value}}
+      <h5>{{num.data}}</h5>
       <span ng-if="num.data <= 20">
         <img ng-src="css/images/temp3.jpeg">
       </span>
@@ -20,6 +19,7 @@
       <span ng-if="num.data > 30">
         <img ng-src="css/images/temp1.jpeg">
       </span>
+      <h4>{{num.value}}</h4>
     </div>
   </div>
 
