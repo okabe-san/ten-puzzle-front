@@ -1,150 +1,195 @@
-/*body {
-  background-image: url("images/ticket01.jpeg");
-  background-size: cover;
-}*/
-
 /*angular */
+.container {
+  margin: 0 auto;
+  padding: 1rem 0;
+  width: 90%;
+}
+
 .ng-binding {
   display: inline-block;
   margin: 0;
+  text-align: center;
 }
 
 /*fontawsome*/
 .fa {
-  color: #555;
-  margin: 0 10px;
+  color: #444;
+  margin: 0 .5rem 0 0;
 }
 
 /*base */
+html {
+  font-size: 10px;
+}
+
+body {
+  background-color:	#008080;
+}
+
+h1 {
+  color: 	#E0FFFF;
+  font-size: 2rem;
+  font-family: 'Bevan', cursive;
+}
+
+h3 {
+  color: #333;
+  font-size: 3rem;
+  font-family: 'Bevan', cursive;
+}
+
 h4 {
   color: #555;
-  font-size: 50px;
-  font-family: 'Bevan', cursive;
+  font-size: 1.5rem;
+  font-family: 'Fenix', serif;
 }
 
 h5 {
   color: #555;
-  font-size: 50px;
+  font-size: 1.5rem;
   display: inline-block;
   float: right;
   font-family: 'Fenix', serif;
 }
 
 h6 {
-  font-size: 30px;
+  font-size: 1rem;
 }
 
 p {
-  font-size: 100px;
+  color:	#FF8C00;
+  font-size: 1.4rem;
+  font-style: italic;
+}
+
+p big {
   font-family: 'Bevan', cursive;
+  text-shadow: .1rem .1rem 0 #FFFFE0;
 }
 
-/*div wrappers*/
-.wrapper-center {
-  display: flex;
-  align-items: center;
-  justify-content: center;
+img {
+  width: 7rem;
+  height: 7rem;
+  border-radius: 50%;
 }
 
+/*wrappers*/
 .main-content {
   text-align: center;
-  padding-top: 500px;
 }
 
-.top {
-  padding: 5%;
+.main-frame {
+  margin: 2rem 0;
+  padding: 1rem;
+  border: .3rem dotted #fff;
+  border-radius: 3rem;
+  background-color:	#FFD700;
 }
 
-.answer {
-  height: 350px;
-  margin: 100px;
-  padding: 30px;
-  border-radius: 50px;
-  background-color: rgba(0, 0, 0, 0.1);
+.cal-answer, .cal-center, .cal-bottom {
+  text-align: center;
 }
 
-.bottom {
-  position: absolute;
-  bottom: 15%;
-  padding-bottom: 5%;
+.cal-top {
+
 }
 
-.bottom-submit {
-  position: absolute;
-  bottom: 5%;
-  left: 10%;
+.cal-answer {
+  height: 15rem;
+  border-radius: 2rem;
+  background-color:	#FFD700;
+  margin: 2rem;
+  padding: 2rem;
 }
 
-/*cal page*/
-.btn, .submit, .oeprator, .digit, .try {
-  color: green;
-  outline: none;
-  border-style: none;
+.cal-center {
 }
 
-.btn {
-  font-size: 50px;
-  margin: 20px;
-  padding: 20px;
-  border-radius: 20px;
+.cal-bottom {
+
 }
 
-.oeprator {
-  font-size: 150px;
-  padding: 30px;
-  background-color: transparent;
-  font-family: 'Bevan', cursive;
-}
-
-.digit {
-  font-size: 100px;
-  width: 200px;
-  height: 200px;
-  border-radius: 50%;
-  font-family: 'Bevan', cursive;
-}
-
-.submit {
-  font-size: 50px;
-  margin: 10px;
-  padding: 30px;
-  border: 9px solid #ccc;
-  border-radius: 3em .7em 2em .7em/.7em 2em .7em 3em;
-  background-color: transparent;
-  font-family: 'Fenix', serif;
-}
-
-.try {
-  font-size: 50px;
-  margin: 10px;
-  padding: 30px;
-  border: 9px solid #ccc;
-  border-radius: .7em 2em .5em .5em/3em .5em 2em .7em;
-  background-color: transparent;
-  font-family: 'Fenix', serif;
-}
-
-/*info page*/
-img {
-  width: 100px;
-  height: 100px;
-}
-
-.scoreWrapper {
+.info-score {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
 }
 
-.score {
-  flex-basis: 20%;
-  border: 1px solid #555;
-  height: 150px;
-  margin: 10px;
-  padding: 15px;
-  border-radius: 5px;
+/*buttons*/
+.btn, .btn-icon, .btn-icon-right, .btn-clear, .submit, .oeprator, .digit, .try {
+  color: green;
+  outline: none;
+  border-style: none;
 }
 
-.btn-small {
-  font-size: 50px;
+.btn, .btn-icon, .btn-icon-right {
+  color: #E0FFFF;
+  padding: 1rem;
+  border-radius: 1.5rem;
+  background-color: #40E0D0;
+}
+
+.btn {
+  font-size: 2rem;
+}
+
+.btn-icon, .btn-icon-right {
+  font-size: 1.5rem;
+  margin: .5rem 0;
+}
+
+.btn-icon-right {
+  float: right;
+}
+
+.btn-clear {
+  color: 	#E0FFFF;
+  font-size: 2rem;
+  padding: 1rem;
+}
+
+.oeprator {
+  color: #006400;
+  font-size: 3rem;
+  padding: 1rem;
+  background-color: transparent;
+  font-family: 'Bevan', cursive;
+}
+
+.digit {
+  text-align: center;
+  font-size: 2rem;
+  width: 5rem;
+  height: 5rem;
+  background-color: #E0FFFF;
+  border-radius: 50%;
+  font-family: 'Bevan', cursive;
+}
+
+.submit, .try {
+  font-size: 1.5rem;
+  margin: 1rem;
+  padding: .5rem;
+  border: .3rem solid #E0FFFF;
+  background-color: #E0FFFF;
+  font-family: 'Fenix', serif;
+}
+
+.submit {
+  border-radius: 3rem .7rem 2rem .7rem/.7rem 2rem .7rem 3rem;
+}
+
+.try {
+  border-radius: .7rem 2rem .5rem .5rem/3rem .5rem 2rem .7rem;
+}
+
+/*info page*/
+.score {
+  flex-basis: 20%;
+  border: .1rem solid #555;
+  height: 10rem;
+  margin: 1rem;
+  padding: 1.5rem;
+  border-radius: .5rem;
+  background: #fff;
 }

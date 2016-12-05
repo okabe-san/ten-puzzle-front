@@ -1,37 +1,35 @@
-<div class="temp" ng-controller="initController as initCtrl" data-ng-init="get(); timer()">
-  <section class="top">
-    <i class="fa fa-book fa-4x" aria-hidden="true"></i>
-    <a href="#/info"><button class="btn" type="button" ng-click="calCtrl.stop()">Record Book</button></a>
+<div ng-controller="initController as initCtrl" data-ng-init="get(); timer()">
+  <section class="cal-top">
+    <a href="#/info"><button class="btn-icon" type="button" ng-click="calCtrl.stop()"><i class="fa fa-book" aria-hidden="true"></i>Book</button></a>
 
-    <h5 class="btn">{{initCtrl.counter()}}...<i class="fa fa-clock-o" aria-hidden="true"></i><small>ticktack</small></h5>
+    <h5 class="btn-clear">{{initCtrl.counter()}}...<i class="fa fa-clock-o" aria-hidden="true"></i><small>ticktack</small></h5>
   </section>
 
-  <section class="answer">
-    <section class="wrapper-center">
+  <section class="cal-answer">
+    <section class="cal-center">
       <h4><span ng-if="calCtrl.result != 0">{{calCtrl.result}}</span>
       {{calCtrl.message}}</h4>
     </section>
 
-    <section class="wrapper-center">
-      <p>{{calCtrl.cal}}</p>
+    <section class="cal-center">
+      <h3>{{calCtrl.cal}}</h3>
     </section>
   </section>
 
-  <section class="wrapper-center">
-    <div class="bottom">
-      <button class="oeprator" ng-click="calCtrl.add('+')">+</button>
-      <button class="oeprator" ng-click="calCtrl.add('-')">-</button>
-      <button class="oeprator" ng-click="calCtrl.add('*')">*</button>
-      <button class="oeprator" ng-click="calCtrl.add('/')">/</button>
-      <button class="oeprator" ng-click="calCtrl.add('(')">(</button>
-      <button class="oeprator" ng-click="calCtrl.add(')')">)</button>
-      <br>
-      <button class="digit" ng-repeat="num in initCtrl.random track by $index" ng-click="calCtrl.add(num)">
-        {{num}}
-      </button>
-    </div>
+  <section class="cal-bottom">
+    <button class="oeprator" ng-click="calCtrl.add('+')">+</button>
+    <button class="oeprator" ng-click="calCtrl.add('-')">-</button>
+    <button class="oeprator" ng-click="calCtrl.add('*')">*</button>
+    <button class="oeprator" ng-click="calCtrl.add('/')">/</button>
+    <button class="oeprator" ng-click="calCtrl.add('(')">(</button>
+    <button class="oeprator" ng-click="calCtrl.add(')')">)</button>
+    <br>
+    <button class="digit" ng-repeat="num in initCtrl.random track by $index" ng-click="calCtrl.add(num)">
+      {{num}}
+    </button>
   </section>
-  <div class="bottom-submit">
+
+  <div class="cal-bottom">
     <button class="submit" ng-click="calCtrl.submit()">Submit</button>
     <button class="submit" ng-click="get(); calCtrl.restart(); calCtrl.cleanUp()">Next</button>
     <button class="try" ng-click="calCtrl.cleanUp()">Try Again</button>

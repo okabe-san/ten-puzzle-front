@@ -1,13 +1,11 @@
 <div ng-controller="initDataController as initDataCtrl" data-ng-init="getData()">
 
   <section class="top">
-    <i class="fa fa-trash fa-4x" aria-hidden="true"></i><button class="btn" ng-click="infoCtrl.deleteData()">Delete Record</button>
-    <br>
-    <i class="fa fa-backward fa-4x" aria-hidden="true"></i>
-    <a href="#/cal"><button class="btn" type="button">Back</button></a>
+    <a href="#/cal"><button class="btn-icon" type="button"><i class="fa fa-backward" aria-hidden="true"></i>Back</button></a>
+    <button class="btn-icon-right" ng-click="infoCtrl.deleteData()"><i class="fa fa-trash" aria-hidden="true"></i>Delete Record</button>
   </section>
 
-  <div class="scoreWrapper">
+  <div class="info-score">
     <div class="score" ng-repeat="num in initDataCtrl.repeatData">
       <h5>{{num.data}}</h5>
       <span ng-if="num.data <= 20">

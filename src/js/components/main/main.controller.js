@@ -8,7 +8,7 @@
 
   function mainController() {
     /*jshint validthis: true */
-    this.greeting = '電車の旅にようこそ!';
+    this.greeting = 'TEN PUZZLE';
   }
 
 })();
