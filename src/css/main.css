@@ -40,7 +40,7 @@ h3 {
 
 h4 {
   color: #555;
-  font-size: 1.5rem;
+  font-size: 2rem;
   font-family: 'Fenix', serif;
 }
 
@@ -68,13 +68,13 @@ p big {
 }
 
 img {
-  width: 7rem;
-  height: 7rem;
-  border-radius: 50%;
+  width: 5rem;
+  height: 5rem;
 }
 
 /*wrappers*/
 .main-content {
+  margin-top: 2rem;
   text-align: center;
 }
 
@@ -86,110 +86,13 @@ img {
   background-color:	#FFD700;
 }
 
-.cal-answer, .cal-center, .cal-bottom {
-  text-align: center;
-}
-
-.cal-top {
-
-}
-
-.cal-answer {
-  height: 15rem;
-  border-radius: 2rem;
-  background-color:	#FFD700;
-  margin: 2rem;
-  padding: 2rem;
-}
-
-.cal-center {
-}
-
-.cal-bottom {
-
-}
-
-.info-score {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-}
-
 /*buttons*/
-.btn, .btn-icon, .btn-icon-right, .btn-clear, .submit, .oeprator, .digit, .try {
-  color: green;
+.btn {
   outline: none;
   border-style: none;
-}
-
-.btn, .btn-icon, .btn-icon-right {
   color: #E0FFFF;
   padding: 1rem;
   border-radius: 1.5rem;
   background-color: #40E0D0;
-}
-
-.btn {
   font-size: 2rem;
-}
-
-.btn-icon, .btn-icon-right {
-  font-size: 1.5rem;
-  margin: .5rem 0;
-}
-
-.btn-icon-right {
-  float: right;
-}
-
-.btn-clear {
-  color: 	#E0FFFF;
-  font-size: 2rem;
-  padding: 1rem;
-}
-
-.oeprator {
-  color: #006400;
-  font-size: 3rem;
-  padding: 1rem;
-  background-color: transparent;
-  font-family: 'Bevan', cursive;
-}
-
-.digit {
-  text-align: center;
-  font-size: 2rem;
-  width: 5rem;
-  height: 5rem;
-  background-color: #E0FFFF;
-  border-radius: 50%;
-  font-family: 'Bevan', cursive;
-}
-
-.submit, .try {
-  font-size: 1.5rem;
-  margin: 1rem;
-  padding: .5rem;
-  border: .3rem solid #E0FFFF;
-  background-color: #E0FFFF;
-  font-family: 'Fenix', serif;
-}
-
-.submit {
-  border-radius: 3rem .7rem 2rem .7rem/.7rem 2rem .7rem 3rem;
-}
-
-.try {
-  border-radius: .7rem 2rem .5rem .5rem/3rem .5rem 2rem .7rem;
-}
-
-/*info page*/
-.score {
-  flex-basis: 20%;
-  border: .1rem solid #555;
-  height: 10rem;
-  margin: 1rem;
-  padding: 1.5rem;
-  border-radius: .5rem;
-  background: #fff;
 }

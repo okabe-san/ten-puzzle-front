@@ -1,0 +1,82 @@
+/*wrappers*/
+.cal-answer, .cal-center, .cal-bottom {
+  text-align: center;
+}
+
+.cal-top {
+
+}
+
+.cal-answer {
+  height: 12rem;
+  border-radius: 2rem;
+  background-color:	#FFD700;
+  margin: 2rem;
+  padding: 2rem;
+}
+
+.cal-center {
+}
+
+.cal-bottom {
+
+}
+
+/*buttons*/
+.btn-icon, .btn-clear, .submit, .oeprator, .digit, .try {
+  outline: none;
+  border-style: none;
+}
+
+.btn-icon {
+  color: #E0FFFF;
+  padding: 1rem;
+  border-radius: 1.5rem;
+  background-color: #40E0D0;
+  font-size: 1.5rem;
+  margin: .5rem 0;
+}
+
+.btn-clear {
+  color: 	#E0FFFF;
+  font-size: 2rem;
+  padding: 1rem;
+}
+
+.oeprator {
+  color: #006400;
+  font-size: 4rem;
+  padding: 1rem;
+  background-color: transparent;
+  font-family: 'Bevan', cursive;
+}
+
+.digit {
+  color: green;
+  text-align: center;
+  font-size: 2rem;
+  width: 6rem;
+  height: 6rem;
+  margin: 0 .5rem;
+  background-color: #E0FFFF;
+  border-radius: 50%;
+  font-family: 'Bevan', cursive;
+}
+
+.submit, .try {
+  color: green;
+  font-size: 2.5rem;
+  margin: 1rem .2rem;
+  padding: .5rem;
+  border: .3rem solid #E0FFFF;
+  background-color: #E0FFFF;
+  font-family: 'Fenix', serif;
+}
+
+.submit {
+  border-radius: 3rem .7rem 2rem .7rem/.7rem 2rem .7rem 3rem;
+}
+
+.try {
+  border-radius: .7rem 2rem .5rem .5rem/3rem .5rem 2rem .7rem;
+}

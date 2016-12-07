@@ -1,0 +1,32 @@
+/*wrappers*/
+.info-score {
+  display: flex;
+  flex-flow: row;
+}
+
+/*buttons*/
+.btn, .btn-right {
+  outline: none;
+  border-style: none;
+  color: #E0FFFF;
+  padding: 1rem;
+  border-radius: 1.5rem;
+  background-color: #40E0D0;
+  font-size: 1.5rem;
+  margin: .5rem 0;
+}
+
+.btn-right {
+  float: right;
+}
+
+/*info page*/
+.score {
+  flex: 0 0 10%;
+  border: .1rem solid #555;
+  height: 10rem;
+  margin: 1rem;
+  padding: 1.5rem;
+  border-radius: .5rem;
+  background: #fff;
+}
