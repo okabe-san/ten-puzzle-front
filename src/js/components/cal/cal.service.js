@@ -81,6 +81,7 @@
     this.typeOneA = typeOneA;
     this.typeOneB = typeOneB;
     this.typeTwo = typeTwo;
+    this.submitCheck = submitCheck;
     this.check = check;
     this.message = '';
   }
@@ -192,6 +193,10 @@
 
     result = base(numFive, numFiveOperator);
     return result;
+  }
+
+  function submitCheck() {
+    if ()
   }
 
   function check(num) {

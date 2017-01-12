@@ -58,7 +58,7 @@
     };
 
     this.submit = () => {
-      if (this.numArr.lenght !== 4) {
+      if (this.numArr.length < 4) {
         this.message = 'test';
       }
       if (this.numArr.length === 4) {
