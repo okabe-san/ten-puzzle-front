@@ -58,6 +58,9 @@
     };
 
     this.submit = () => {
+      if (this.numArr.lenght !== 4) {
+        this.message = 'test';
+      }
       if (this.numArr.length === 4) {
         this.result = calService.base(this.numArr, this.operatorArr);
       } else if (this.numArr[0] === 'd') {
