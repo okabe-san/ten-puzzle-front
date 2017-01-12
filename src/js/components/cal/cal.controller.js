@@ -58,9 +58,6 @@
     };
 
     this.submit = () => {
-      if (this.numArr.length < 4) {
-        this.message = 'test';
-      }
       if (this.numArr.length === 4) {
         this.result = calService.base(this.numArr, this.operatorArr);
       } else if (this.numArr[0] === 'd') {
@@ -73,7 +70,7 @@
         this.result = calService.typeTwo(this.numArr, this.operatorArr);
       }
       if (!calService.check(this.result)) {
-        this.message = 'is not 10...';
+        this.message = 'Not 10 or somthing wrong... Did you use all 4 digits numbers to get 10?';
       } else {
         this.message = 'Correct! Saved to Record Book.';
         timerService.stopCounter();
